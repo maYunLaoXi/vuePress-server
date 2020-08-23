@@ -4,7 +4,7 @@ const static = require('koa-static')
 const path = require('path')
 
 app.use(static(
-  path.join(__dirname, '../public')
+  path.join(__dirname, '../blog')
 ))
 
 app.listen(3000, () => {
