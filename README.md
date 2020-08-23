@@ -1,4 +1,4 @@
-## 简简的静态网站服务器
+## 简单的静态网站服务器
 在服务器端安装git 
 ```
 git clone https://github.com/maYunLaoXi/vuePress-server.git
