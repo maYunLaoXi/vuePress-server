@@ -7,6 +7,6 @@ app.use(static(
   path.join(__dirname, '../blog')
 ))
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('aaaaaaaa')
 })
