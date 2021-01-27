@@ -4,6 +4,7 @@
   "description": "vuePress-server",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "test"
   },
   "keywords": [
@@ -12,7 +13,11 @@
   "author": "maYunLaoXi",
   "license": "ISC",
   "dependencies": {
+    "@koa/router": "^10.0.0",
+    "f-com": "^1.4.1",
     "koa": "^2.13.0",
-    "koa-static": "^5.0.0"
+    "koa-bodyparser": "^4.3.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6"
   }
 }
