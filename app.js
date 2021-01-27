@@ -5,6 +5,13 @@ const static = require('koa-static')
 const path = require('path')
 const loginRouter = require('./router/login')
 const bodyparser = require('koa-bodyparser')
+const static = require('koa-static')
+const path = require('path')
+const route = require('./routes')
+
+
+const app = new Koa
+const port = 8090
 
 app.use(cors())
 app.use(static(
@@ -12,6 +19,8 @@ app.use(static(
 ))
 app.use(bodyparser())
 app.use(loginRouter.routes())
-app.listen(8090, () => {
-  console.log('aaaaaaaa')
+app.use(route.routes())
+
+app.listen(port, () => {
+  console.log(`local successful at ${port}`)
 })
