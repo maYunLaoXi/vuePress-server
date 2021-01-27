@@ -1,12 +1,9 @@
 const Koa = require('koa')
 const cors = require('koa2-cors')
-const app = new Koa
 const static = require('koa-static')
 const path = require('path')
 const loginRouter = require('./router/login')
 const bodyparser = require('koa-bodyparser')
-const static = require('koa-static')
-const path = require('path')
 const route = require('./routes')
 
 
