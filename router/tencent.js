@@ -42,17 +42,19 @@ router.post('/tcb/invokecloudfunction', async ctx => {
   }
 })
 router.post('/tcb/databaseupdate', async ctx => {
-  console.log('get', ctx.request.url)
+  let data = handleBodyParser(ctx.request.body)
+  if (data.query) {
+    data.query = data.query.replace(/#/g, '.')
+  }
   const params = fCom.param2Obj(ctx.request.url)
   let str = ''
-  const data = await postData(ctx)
-  console.log(data)
-  // const res = await request({
-  //   method: 'post',
-  //   url: '/tcb/databaseupdate',
-  //   data: handleBodyParser(ctx.request.body),
-  //   params
-  // })
-  // ctx.body = res.data
+  const res = await request({
+    method: 'post',
+    url: '/tcb/databaseupdate',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    data,
+    params
+  })
+  ctx.body = res.data
 })
 module.exports = router
