@@ -46,6 +46,7 @@ router.post('/tcb/databaseupdate', async ctx => {
   if (data.query) {
     data.query = data.query.replace(/#/g, '.')
   }
+  console.log(data)
   const params = fCom.param2Obj(ctx.request.url)
   let str = ''
   const res = await request({
