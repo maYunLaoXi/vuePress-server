@@ -16,6 +16,17 @@ function postData(ctx) {
     })
   })
 }
+function param2Obj(url) {
+  let str = url.split('?')[1]
+  return JSON.parse(
+    '{"' +
+      str.replace(/"/g, '\\"')
+        .replace(/&/g, '","')
+        .replace(/=/g, '":"')
+        .replace(/\+/g, ' ') +
+    '"}'
+  )
+}
 module.exports = {
-  handleBodyParser, postData
+  handleBodyParser, postData, param2Obj
 }
