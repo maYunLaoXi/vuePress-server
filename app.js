@@ -13,7 +13,7 @@ const port = 8090
 
 app.use(cors())
 app.use(static(
-  path.join(__dirname, '../web/yingyinbiclound-console/dist')
+  path.join(__dirname, './')
 ))
 app.use(bodyparser())
 app.use(loginRouter.routes())
